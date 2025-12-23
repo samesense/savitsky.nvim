@@ -31,9 +31,9 @@ end
 -- This should be called before setting up catppuccin
 function M.setup(opts)
   opts = opts or {}
-  
+
   local theme = opts.theme or "mocha"
-  
+
   -- Validate theme
   local valid_theme = false
   for _, t in ipairs(M.themes) do

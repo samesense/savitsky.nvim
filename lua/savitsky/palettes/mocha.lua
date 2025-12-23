@@ -16,16 +16,22 @@ return {
   blue = "#89b4fa",
   lavender = "#b4befe",
 
+  -- Text colors
   text = "#cdd6f4",
   subtext1 = "#bac2de",
   subtext0 = "#a6adc8",
+
+  -- Overlay colors
   overlay2 = "#9399b2",
   overlay1 = "#7f849c",
   overlay0 = "#6c7086",
+
+  -- Surface colors
   surface2 = "#585b70",
   surface1 = "#45475a",
   surface0 = "#313244",
 
+  -- Base colors
   base = "#1e1e2e",
   mantle = "#181825",
   crust = "#11111b",
