@@ -1,0 +1,143 @@
+*savitsky.nvim.txt*  Neovim themes derived from Savitsky Museum paintings
+
+==============================================================================
+CONTENTS                                                   *savitsky-contents*
+
+    1. Introduction ........................... |savitsky-introduction|
+    2. Requirements ........................... |savitsky-requirements|
+    3. Installation ........................... |savitsky-installation|
+    4. Usage .................................. |savitsky-usage|
+    5. API .................................... |savitsky-api|
+    6. Themes ................................. |savitsky-themes|
+
+==============================================================================
+INTRODUCTION                                           *savitsky-introduction*
+
+savitsky.nvim provides color palettes for Neovim that use catppuccin theme
+overrides to introduce new palettes inspired by the vibrant and rich colors
+of Central Asian art from the Savitsky Museum.
+
+The plugin offers four beautiful palettes (mocha, macchiato, frappe, and
+latte) that seamlessly integrate with the catppuccin theme framework.
+
+==============================================================================
+REQUIREMENTS                                           *savitsky-requirements*
+
+- Neovim >= 0.8.0
+- catppuccin/nvim theme
+
+==============================================================================
+INSTALLATION                                           *savitsky-installation*
+
+Using lazy.nvim: >
+
+    {
+      "samesense/savitsky.nvim",
+      dependencies = { "catppuccin/nvim" },
+    }
+<
+
+Using packer.nvim: >
+
+    use {
+      "samesense/savitsky.nvim",
+      requires = { "catppuccin/nvim" },
+    }
+<
+
+==============================================================================
+USAGE                                                         *savitsky-usage*
+
+Basic setup: >
+
+    local savitsky = require("savitsky")
+    local colors = savitsky.setup({ theme = "mocha" })
+
+    require("catppuccin").setup({
+      color_overrides = {
+        mocha = colors,
+      },
+    })
+
+    vim.cmd.colorscheme("catppuccin-mocha")
+<
+
+Using multiple palettes: >
+
+    local savitsky = require("savitsky")
+
+    require("catppuccin").setup({
+      color_overrides = {
+        mocha = savitsky.get_overrides("mocha"),
+        macchiato = savitsky.get_overrides("macchiato"),
+        frappe = savitsky.get_overrides("frappe"),
+        latte = savitsky.get_overrides("latte"),
+      },
+    })
+
+    vim.cmd.colorscheme("catppuccin-mocha")
+<
+
+==============================================================================
+API                                                             *savitsky-api*
+
+savitsky.setup({opts})                                      *savitsky.setup()*
+    Setup the savitsky plugin and return color overrides.
+
+    Parameters: ~
+        {opts} (table|nil) Configuration options
+            - theme: (string) Theme name ("mocha"|"macchiato"|"frappe"|"latte")
+                     Default: "mocha"
+
+    Returns: ~
+        (table) Color override table for catppuccin
+
+    Example: >
+        local colors = require("savitsky").setup({ theme = "frappe" })
+<
+
+savitsky.get_overrides({theme})                    *savitsky.get_overrides()*
+    Get color overrides for a specific theme.
+
+    Parameters: ~
+        {theme} (string|nil) Theme name. Default: "mocha"
+
+    Returns: ~
+        (table|nil) Color override table or nil if theme doesn't exist
+
+    Example: >
+        local colors = require("savitsky").get_overrides("latte")
+<
+
+savitsky.themes                                            *savitsky.themes*
+    List of available theme names.
+
+    Type: ~
+        (table) Array of theme names
+
+    Example: >
+        local themes = require("savitsky").themes
+        -- {"mocha", "macchiato", "frappe", "latte"}
+<
+
+==============================================================================
+THEMES                                                       *savitsky-themes*
+
+mocha                                                    *savitsky-theme-mocha*
+    Rich, deep colors reminiscent of Central Asian art.
+    Best for: Dark theme users who prefer high contrast.
+
+macchiato                                          *savitsky-theme-macchiato*
+    Warm, medium-dark colors with artistic depth.
+    Best for: Dark theme users who prefer slightly less contrast.
+
+frappe                                                  *savitsky-theme-frappe*
+    Cool, sophisticated colors with artistic elegance.
+    Best for: Dark theme users who prefer cooler tones.
+
+latte                                                    *savitsky-theme-latte*
+    Light, vibrant colors inspired by Central Asian textiles.
+    Best for: Light theme users.
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:
