@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Neovim Savitsky Museum Theme Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --bg: #0f0f14;
+      --panel: #181825;
+      --text: #cdd6f4;
+      --muted: #a6adc8;
+      --border: #313244;
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .theme {
+      margin-bottom: 3rem;
+      padding: 1.5rem;
+      background: var(--panel);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .theme h2 {
+      margin: 0 0 1rem 0;
+      font-size: 1.4rem;
+    }
+
+    /* NEW: horizontal layout */
+    .theme-content {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .theme-media {
+      flex: 0 0 220px;
+    }
+
+    .theme-media img {
+      width: 220px;
+      max-width: 100%;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      display: block;
+    }
+
+    .theme-palettes {
+      flex: 1;
+    }
+
+    .section {
+      margin-top: 1.25rem;
+    }
+
+    .section h3 {
+      margin: 0 0 0.75rem 0;
+      font-size: 1rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .swatches {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .swatch {
+      width: 72px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .swatch-box {
+      width: 100%;
+      height: 48px;
+      border-radius: 8px;
+      border: 1px solid #0006;
+      margin-bottom: 0.3rem;
+    }
+
+    .hex {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 4rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    /* Mobile fallback */
+    @media (max-width: 800px) {
+      .theme-content {
+        flex-direction: column;
+      }
+
+      .theme-media img {
+        width: 100%;
+        max-width: 360px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Neovim Savitsky Museum Theme Gallery</h1>
+
+  <div id="gallery">Loading…</div>
+
+  <footer>
+    Auto-generated from Lua themes.
+  </footer>
+
+  <script>
+    async function loadThemes() {
+      const res = await fetch("themes.json");
+      return await res.json();
+    }
+
+    function makeSwatch(hex, label = "") {
+      const wrap = document.createElement("div");
+      wrap.className = "swatch";
+
+      const box = document.createElement("div");
+      box.className = "swatch-box";
+      box.style.background = hex;
+
+      const hexLabel = document.createElement("div");
+      hexLabel.className = "hex";
+      hexLabel.textContent = hex;
+
+      wrap.appendChild(box);
+      if (label) {
+        const name = document.createElement("div");
+        name.textContent = label;
+        wrap.appendChild(name);
+      }
+      wrap.appendChild(hexLabel);
+
+      return wrap;
+    }
+
+    function renderTheme(name, theme) {
+      const container = document.createElement("div");
+      container.className = "theme";
+
+      const title = document.createElement("h2");
+      title.textContent = name;
+      container.appendChild(title);
+
+      const content = document.createElement("div");
+      content.className = "theme-content";
+
+      /* Image column */
+      const media = document.createElement("div");
+      media.className = "theme-media";
+
+      const img = document.createElement("img");
+      img.src = `photos/${name}.png`;
+      img.alt = `${name} source image`;
+      img.loading = "lazy";
+      img.onerror = () => media.remove();
+
+      media.appendChild(img);
+      content.appendChild(media);
+
+      /* Palette column */
+      const palettes = document.createElement("div");
+      palettes.className = "theme-palettes";
+
+      if (theme.core && Object.keys(theme.core).length) {
+        const section = document.createElement("div");
+        section.className = "section";
+
+        const h = document.createElement("h3");
+        h.textContent = "Core UI";
+        section.appendChild(h);
+
+        const row = document.createElement("div");
+        row.className = "swatches";
+
+        for (const [k, hex] of Object.entries(theme.core)) {
+          row.appendChild(makeSwatch(hex, k));
+        }
+
+        section.appendChild(row);
+        palettes.appendChild(section);
+      }
+
+      if (theme.accents && Object.keys(theme.accents).length) {
+        const section = document.createElement("div");
+        section.className = "section";
+
+        const h = document.createElement("h3");
+        h.textContent = "Accents";
+        section.appendChild(h);
+
+        const row = document.createElement("div");
+        row.className = "swatches";
+
+        for (const [group, colors] of Object.entries(theme.accents)) {
+          for (const hex of colors) {
+            row.appendChild(makeSwatch(hex, group));
+          }
+        }
+
+        section.appendChild(row);
+        palettes.appendChild(section);
+      }
+
+      content.appendChild(palettes);
+      container.appendChild(content);
+
+      return container;
+    }
+
+    async function main() {
+      const gallery = document.getElementById("gallery");
+      gallery.textContent = "";
+
+      const themes = await loadThemes();
+
+      for (const [name, theme] of Object.entries(themes)) {
+        gallery.appendChild(renderTheme(name, theme));
+      }
+    }
+
+    main();
+  </script>
+
+</body>
+</html>
