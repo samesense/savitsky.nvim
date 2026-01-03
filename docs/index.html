@@ -41,7 +41,7 @@
       font-size: 1.4rem;
     }
 
-    /* NEW: horizontal layout */
+    /* horizontal layout */
     .theme-content {
       display: flex;
       gap: 1.5rem;
@@ -58,6 +58,11 @@
       border-radius: 10px;
       border: 1px solid var(--border);
       display: block;
+    }
+
+    /* NEW: spacing between stacked images */
+    .theme-media img + img {
+      margin-top: 0.75rem;
     }
 
     .theme-palettes {
@@ -113,6 +118,10 @@
     @media (max-width: 800px) {
       .theme-content {
         flex-direction: column;
+      }
+
+      .theme-media {
+        flex: 0 0 auto;
       }
 
       .theme-media img {
@@ -177,13 +186,27 @@
       const media = document.createElement("div");
       media.className = "theme-media";
 
+      // Source image (photos/)
       const img = document.createElement("img");
       img.src = `photos/${name}.png`;
       img.alt = `${name} source image`;
       img.loading = "lazy";
-      img.onerror = () => media.remove();
-
+      img.onerror = () => img.remove();
       media.appendChild(img);
+
+      // NEW: Neovim demo screenshot (demo/)
+      const demo = document.createElement("img");
+      demo.src = `demo/${name}.png`;
+      demo.alt = `${name} Neovim screenshot`;
+      demo.loading = "lazy";
+      demo.onerror = () => demo.remove();
+      media.appendChild(demo);
+
+      // If neither image exists, drop the whole column
+      if (!img.isConnected && !demo.isConnected) {
+        media.remove();
+      }
+
       content.appendChild(media);
 
       /* Palette column */
