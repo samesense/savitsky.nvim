@@ -125,18 +125,6 @@ No restart is required.
 
 ---
 
-## Default Highlight Overrides
-
-All themes use a shared highlight override file:
-
-```
-lua/savitsky/highlights/default.lua
-```
-
-This ensures consistent UI and syntax styling across palettes while allowing future per-theme customization.
-
----
-
 ## Optional: Load a Theme on Startup
 
 If you want a default Savitsky theme when Neovim starts:
