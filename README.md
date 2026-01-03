@@ -2,23 +2,25 @@
 
 > Neovim themes derived from Savitsky Museum paintings
 
-A color palette collection for Neovim that uses [catppuccin](https://github.com/catppuccin/nvim) theme overrides to introduce new palettes inspired by the vibrant and rich colors of Central Asian art from the Savitsky Museum.
+`savitsky.nvim` is a Neovim theme plugin built on top of  
+[catppuccin/nvim](https://github.com/catppuccin/nvim).
 
-## Features
+It provides curated color palettes inspired by paintings from the Savitsky Museum and allows **runtime theme switching** via simple Neovim commands.
 
-- 🎨 Four beautiful palettes: `mocha`, `macchiato`, `frappe`, and `latte`
-- 🖼️ Colors inspired by Savitsky Museum paintings
-- 🔧 Easy integration with catppuccin theme
-- ⚡ Minimal setup required
+This plugin does **not** define its own colorscheme. Instead, it dynamically configures Catppuccin using palette and highlight overrides.
+
+---
 
 ## Requirements
 
-- Neovim >= 0.8.0
-- [catppuccin/nvim](https://github.com/catppuccin/nvim) theme
+- Neovim >= 0.8
+- [catppuccin/nvim](https://github.com/catppuccin/nvim)
+
+---
 
 ## Installation
 
-Using [lazy.nvim](https://github.com/folke/lazy.nvim):
+### lazy.nvim
 
 ```lua
 {
@@ -29,7 +31,7 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 }
 ```
 
-Using [packer.nvim](https://github.com/wbthomason/packer.nvim):
+### packer.nvim
 
 ```lua
 use {
@@ -40,104 +42,153 @@ use {
 }
 ```
 
-Using [vim-plug](https://github.com/junegunn/vim-plug):
+### vim-plug
 
 ```vim
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'catppuccin/nvim'
 Plug 'samesense/savitsky.nvim'
 ```
 
+---
+
 ## Usage
 
-### Basic Setup
+`savitsky.nvim` is command-driven. No manual Lua setup is required.
 
-```lua
--- Setup savitsky with your preferred theme
-local savitsky = require("savitsky")
-local colors = savitsky.setup({ theme = "mocha" })
+### List available themes
 
--- Configure catppuccin to use savitsky colors
-require("catppuccin").setup({
-  color_overrides = {
-    mocha = colors,
-  },
-})
-
--- Set the colorscheme
-vim.cmd.colorscheme("catppuccin-mocha")
+```
+:SavitskyList
 ```
 
-### Available Themes
+Prints all registered Savitsky themes.
 
-Choose from four different palettes:
+---
 
-- `mocha` - Rich, deep colors (default, dark theme)
-- `macchiato` - Warm, medium-dark colors
-- `frappe` - Cool, sophisticated colors
-- `latte` - Light, vibrant colors
+### Load a theme
 
-### Advanced Configuration
-
-You can use different savitsky palettes with different catppuccin variants:
-
-```lua
-local savitsky = require("savitsky")
-
-require("catppuccin").setup({
-  color_overrides = {
-    mocha = savitsky.get_overrides("mocha"),
-    macchiato = savitsky.get_overrides("macchiato"),
-    frappe = savitsky.get_overrides("frappe"),
-    latte = savitsky.get_overrides("latte"),
-  },
-})
-
-vim.cmd.colorscheme("catppuccin-mocha")
+```
+:SavitskyLoad bull
 ```
 
-### Switching Themes
+This command:
 
-You can easily switch between themes at runtime:
+1. Reconfigures Catppuccin with the selected palette  
+2. Applies the appropriate Catppuccin flavour  
+3. Reloads the colorscheme immediately  
 
-```lua
--- Switch to frappe palette
-local colors = require("savitsky").get_overrides("frappe")
-require("catppuccin").setup({
-  color_overrides = {
-    frappe = colors,
-  },
-})
-vim.cmd.colorscheme("catppuccin-frappe")
+Tab completion is supported:
+
+```
+:SavitskyLoad <Tab>
 ```
 
-## Color Palette
+---
 
-Each theme includes the complete catppuccin color palette structure:
+## Available Themes
 
-- **Accent colors**: rosewater, flamingo, pink, mauve, red, maroon, peach, yellow, green, teal, sky, sapphire, blue, lavender
-- **Text colors**: text, subtext1, subtext0
-- **Overlay colors**: overlay2, overlay1, overlay0
-- **Surface colors**: surface2, surface1, surface0
-- **Base colors**: base, mantle, crust
+Each theme corresponds to a palette inspired by a Savitsky Museum painting:
 
-## Inspiration
+- abstractBoxes
+- bull
+- camels
+- couple
+- forest
+- industry
+- man
+- witch
 
-The color palettes are inspired by the rich and vibrant artworks housed in the Savitsky Museum in Nukus, Uzbekistan, which features one of the world's finest collections of Russian and Central Asian avant-garde art.
+All themes currently target the **Catppuccin `mocha` flavour** with custom palette overrides.
+
+---
+
+## How It Works
+
+Each theme entry defines:
+
+- **flavour** – Catppuccin flavour (`mocha`)  
+- **palette** – Color overrides for that flavour  
+- **highlights** – Highlight overrides (shared by default)  
+
+When you run:
+
+```
+:SavitskyLoad <theme>
+```
+
+The plugin performs:
+
+- `catppuccin.setup()` with theme-specific overrides  
+- `:colorscheme catppuccin-mocha`  
+
+No restart is required.
+
+---
+
+## Default Highlight Overrides
+
+All themes use a shared highlight override file:
+
+```
+lua/savitsky/highlights/default.lua
+```
+
+This ensures consistent UI and syntax styling across palettes while allowing future per-theme customization.
+
+---
+
+## Optional: Load a Theme on Startup
+
+If you want a default Savitsky theme when Neovim starts:
+
+```lua
+vim.cmd("SavitskyLoad forest")
+```
+
+Place this after plugin initialization.
+
+---
+
+## File Structure
+
+```
+savitsky.nvim
+├── plugin
+│   └── savitsky.lua        # user commands
+├── lua
+│   └── savitsky
+│       ├── init.lua        # theme loader
+│       ├── registry.lua   # theme definitions
+│       ├── palettes       # palette files
+│       └── highlights
+│           └── default.lua
+```
+
+---
 
 ## Contributing
 
-Contributions are welcome! Feel free to submit issues or pull requests to add new palettes or improve existing ones.
+Contributions are welcome:
+
+- New palettes
+- New highlight styles
+- Documentation improvements
+
+Open an issue or submit a pull request.
+
+---
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) for details.
+MIT License — see LICENSE.
+
+---
 
 ## Related Projects
 
-- [catppuccin/nvim](https://github.com/catppuccin/nvim) - Soothing pastel theme for Neovim
-- [Catppuccin](https://github.com/catppuccin/catppuccin) - The main Catppuccin organization
+- https://github.com/catppuccin/nvim
+- https://github.com/catppuccin/catppuccin
 
-## Acknowledgments
+---
 
-- Thanks to the Catppuccin team for creating such a flexible and beautiful theme framework
-- Inspired by the Savitsky Museum's collection of Central Asian art
+Inspired by the Savitsky Museum’s collection of Central Asian and avant-garde art.
