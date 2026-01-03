@@ -41,36 +41,60 @@
       font-size: 1.4rem;
     }
 
-    /* horizontal layout */
+    /* 3-column layout: artwork | palettes | demo */
     .theme-content {
-      display: flex;
+      display: grid;
+      grid-template-columns: 220px 1fr 360px;
       gap: 1.5rem;
-      align-items: flex-start;
+      align-items: start;
     }
 
-    .theme-media {
-      flex: 0 0 220px;
+    .theme-media,
+    .theme-demo {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
     }
 
-    .theme-media img {
-      width: 220px;
-      max-width: 100%;
+    /* Hover zoom container (keeps border radius + prevents layout shift) */
+    .zoom {
+      position: relative;
+      overflow: hidden;
       border-radius: 10px;
       border: 1px solid var(--border);
-      display: block;
+      background: #0003;
     }
 
-    /* NEW: spacing between stacked images */
-    .theme-media img + img {
-      margin-top: 0.75rem;
+    .zoom img {
+      width: 100%;
+      display: block;
+      transform: scale(1);
+      transition: transform 180ms ease, filter 180ms ease;
+      will-change: transform;
+    }
+
+    .zoom:hover img {
+      transform: scale(1.9);
+      filter: saturate(1.05) contrast(1.05);
+      cursor: zoom-in;
+    }
+
+    /* Optional: focus-visible support for keyboard users */
+    .zoom:focus-within img {
+      transform: scale(1.9);
+      filter: saturate(1.05) contrast(1.05);
     }
 
     .theme-palettes {
-      flex: 1;
+      min-width: 0;
     }
 
     .section {
       margin-top: 1.25rem;
+    }
+
+    .section:first-child {
+      margin-top: 0;
     }
 
     .section h3 {
@@ -115,18 +139,29 @@
     }
 
     /* Mobile fallback */
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
+      body {
+        padding: 1.25rem;
+      }
+
       .theme-content {
-        flex-direction: column;
+        grid-template-columns: 1fr;
       }
 
-      .theme-media {
-        flex: 0 0 auto;
+      .theme {
+        padding: 1.25rem;
       }
 
-      .theme-media img {
-        width: 100%;
-        max-width: 360px;
+      .zoom:hover img,
+      .zoom:focus-within img {
+        transform: scale(1.25);
+      }
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .zoom img {
+        transition: none;
       }
     }
   </style>
@@ -171,6 +206,20 @@
       return wrap;
     }
 
+    function makeZoomImage(src, alt, onMissingRemoveEl) {
+      const wrap = document.createElement("div");
+      wrap.className = "zoom";
+
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = alt;
+      img.loading = "lazy";
+      img.onerror = () => onMissingRemoveEl?.remove();
+
+      wrap.appendChild(img);
+      return wrap;
+    }
+
     function renderTheme(name, theme) {
       const container = document.createElement("div");
       container.className = "theme";
@@ -182,34 +231,15 @@
       const content = document.createElement("div");
       content.className = "theme-content";
 
-      /* Image column */
+      /* Left: artwork (photos/) */
       const media = document.createElement("div");
       media.className = "theme-media";
 
-      // Source image (photos/)
-      const img = document.createElement("img");
-      img.src = `photos/${name}.png`;
-      img.alt = `${name} source image`;
-      img.loading = "lazy";
-      img.onerror = () => img.remove();
-      media.appendChild(img);
-
-      // NEW: Neovim demo screenshot (demo/)
-      const demo = document.createElement("img");
-      demo.src = `demo/${name}.png`;
-      demo.alt = `${name} Neovim screenshot`;
-      demo.loading = "lazy";
-      demo.onerror = () => demo.remove();
-      media.appendChild(demo);
-
-      // If neither image exists, drop the whole column
-      if (!img.isConnected && !demo.isConnected) {
-        media.remove();
-      }
-
+      const art = makeZoomImage(`photos/${name}.png`, `${name} source image`, media);
+      media.appendChild(art);
       content.appendChild(media);
 
-      /* Palette column */
+      /* Center: palettes */
       const palettes = document.createElement("div");
       palettes.className = "theme-palettes";
 
@@ -254,8 +284,16 @@
       }
 
       content.appendChild(palettes);
-      container.appendChild(content);
 
+      /* Right: Neovim demo screenshot (demo/) */
+      const demoWrap = document.createElement("div");
+      demoWrap.className = "theme-demo";
+
+      const demo = makeZoomImage(`demo/${name}.png`, `${name} Neovim screenshot`, demoWrap);
+      demoWrap.appendChild(demo);
+      content.appendChild(demoWrap);
+
+      container.appendChild(content);
       return container;
     }
 
