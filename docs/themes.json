@@ -1,34 +1,306 @@
 {
   "abstractBoxes": {
-    "core": {},
-    "accents": {}
+    "core": {
+      "base": "#201808",
+      "surface0": "#606277",
+      "surface1": "#504050",
+      "surface2": "#505165",
+      "overlay0": "#987880",
+      "overlay1": "#808098",
+      "overlay2": "#909078",
+      "text": "#e0b8b8",
+      "subtext1": "#cca4a5",
+      "subtext0": "#b29384"
+    },
+    "accents": {
+      "red": [
+        "#f8d0c8",
+        "#f8c8c8",
+        "#f8c8c0",
+        "#f0c8c0",
+        "#f8c0b8"
+      ],
+      "warm": [
+        "#f8d898",
+        "#f8d090",
+        "#f8c888"
+      ],
+      "cool": [
+        "#aabced",
+        "#a1afd5",
+        "#a8add4",
+        "#9ab0d6",
+        "#afabd2"
+      ],
+      "bridge": [
+        "#cba6f7"
+      ]
+    }
   },
   "bull": {
-    "core": {},
-    "accents": {}
+    "core": {
+      "base": "#181808",
+      "surface0": "#405040",
+      "surface1": "#305050",
+      "surface2": "#4e5165",
+      "overlay0": "#808068",
+      "overlay1": "#888870",
+      "overlay2": "#909078",
+      "text": "#d8b8a8",
+      "subtext1": "#a2aac5",
+      "subtext0": "#8f96b0"
+    },
+    "accents": {
+      "red": [
+        "#ceada5",
+        "#b7949a",
+        "#b79496",
+        "#b6949d",
+        "#b79593"
+      ],
+      "warm": [
+        "#f8c000",
+        "#f8c008",
+        "#f8c820"
+      ],
+      "cool": [
+        "#7bcbc2",
+        "#82b6d1",
+        "#88b5d3",
+        "#7eb7ce",
+        "#8db4d5"
+      ],
+      "bridge": [
+        "#cba6f7"
+      ]
+    }
   },
   "camels": {
-    "core": {},
-    "accents": {}
+    "core": {
+      "base": "#281818",
+      "surface0": "#504050",
+      "surface1": "#405040",
+      "surface2": "#584858",
+      "overlay0": "#808068",
+      "overlay1": "#8088a0",
+      "overlay2": "#909078",
+      "text": "#e0c0b0",
+      "subtext1": "#d1a9a9",
+      "subtext0": "#b79889"
+    },
+    "accents": {
+      "red": [
+        "#f0c8d0",
+        "#f0c8c8",
+        "#e8c8d8",
+        "#e8c0d0",
+        "#e8c0c8"
+      ],
+      "warm": [
+        "#f8c810",
+        "#f8d028",
+        "#f8d838"
+      ],
+      "cool": [
+        "#b7b9ea",
+        "#acacd3",
+        "#b2aad1",
+        "#a5aed5",
+        "#b9a8ce"
+      ],
+      "bridge": [
+        "#cba6f7"
+      ]
+    }
   },
   "couple": {
-    "core": {},
-    "accents": {}
+    "core": {
+      "base": "#1c1b27",
+      "surface0": "#434154",
+      "surface1": "#3f4154",
+      "surface2": "#3f4255",
+      "overlay0": "#83839b",
+      "overlay1": "#7f849c",
+      "overlay2": "#7f849b",
+      "text": "#b3bad6",
+      "subtext1": "#a0a7c1",
+      "subtext0": "#9092ac"
+    },
+    "accents": {
+      "red": [
+        "#d0acab",
+        "#ae9897",
+        "#ae9895",
+        "#ae9899",
+        "#ad9894"
+      ],
+      "warm": [
+        "#fabf95",
+        "#e6b491",
+        "#e1b68e"
+      ],
+      "cool": [
+        "#76cbcb",
+        "#7ababa",
+        "#79babf",
+        "#7cbab5",
+        "#79b9c4"
+      ],
+      "bridge": [
+        "#cba6f7"
+      ]
+    }
   },
   "forest": {
-    "core": {},
-    "accents": {}
+    "core": {
+      "base": "#181825",
+      "surface0": "#4c4a5d",
+      "surface1": "#494b5e",
+      "surface2": "#484b5e",
+      "overlay0": "#7d7c94",
+      "overlay1": "#797e95",
+      "overlay2": "#787e95",
+      "text": "#b0b7d3",
+      "subtext1": "#9da4be",
+      "subtext0": "#8d8fa9"
+    },
+    "accents": {
+      "red": [
+        "#d0acab",
+        "#ae9897",
+        "#ae9895",
+        "#ae9899",
+        "#ad9894"
+      ],
+      "warm": [
+        "#e9c68e",
+        "#d7ba8b",
+        "#d1bc8a"
+      ],
+      "cool": [
+        "#76cbcb",
+        "#7ababa",
+        "#79babf",
+        "#7cbab5",
+        "#79b9c4"
+      ],
+      "bridge": [
+        "#cba6f7"
+      ]
+    }
   },
   "industry": {
-    "core": {},
-    "accents": {}
+    "core": {
+      "base": "#281818",
+      "surface0": "#606277",
+      "surface1": "#305050",
+      "surface2": "#505165",
+      "overlay0": "#808068",
+      "overlay1": "#888870",
+      "overlay2": "#909078",
+      "text": "#e0c0b0",
+      "subtext1": "#ccac9d",
+      "subtext0": "#969db9"
+    },
+    "accents": {
+      "red": [
+        "#e8a898",
+        "#ffc5b3",
+        "#ffbfd2",
+        "#ffbfc7",
+        "#ffbfdc"
+      ],
+      "warm": [
+        "#f8e080",
+        "#f8d878",
+        "#f8e088"
+      ],
+      "cool": [
+        "#74e1d6",
+        "#72e9ff",
+        "#80e7ff",
+        "#67ebff",
+        "#8fe4ff"
+      ],
+      "bridge": [
+        "#cba6f7"
+      ]
+    }
   },
   "man": {
-    "core": {},
-    "accents": {}
+    "core": {
+      "base": "#281818",
+      "surface0": "#284848",
+      "surface1": "#405040",
+      "surface2": "#584858",
+      "overlay0": "#808068",
+      "overlay1": "#8888a0",
+      "overlay2": "#909078",
+      "text": "#a8d0e0",
+      "subtext1": "#aeb5d2",
+      "subtext0": "#98a1bd"
+    },
+    "accents": {
+      "red": [
+        "#f0c8d0",
+        "#f8b0a0",
+        "#f8a090",
+        "#f89888",
+        "#f89890"
+      ],
+      "warm": [
+        "#f0d800",
+        "#f8d810",
+        "#f8d000"
+      ],
+      "cool": [
+        "#73cbcb",
+        "#70c8c8",
+        "#68c8d8",
+        "#68c8e8",
+        "#70c8d8"
+      ],
+      "bridge": [
+        "#cba6f7"
+      ]
+    }
   },
   "witch": {
-    "core": {},
-    "accents": {}
+    "core": {
+      "base": "#161622",
+      "surface0": "#4c4a5d",
+      "surface1": "#494b5e",
+      "surface2": "#484b5e",
+      "overlay0": "#7d7c94",
+      "overlay1": "#797e95",
+      "overlay2": "#787e95",
+      "text": "#c4cce9",
+      "subtext1": "#b0b8d5",
+      "subtext0": "#a0a2bf"
+    },
+    "accents": {
+      "red": [
+        "#ffc5b3",
+        "#ffbfd2",
+        "#ffbfc7",
+        "#ffbfdc",
+        "#ffc1be"
+      ],
+      "warm": [
+        "#f8c850",
+        "#f8c048",
+        "#f8d060"
+      ],
+      "cool": [
+        "#74e1d6",
+        "#72e9ff",
+        "#80e7ff",
+        "#67ebff",
+        "#8fe4ff"
+      ],
+      "bridge": [
+        "#cba6f7"
+      ]
+    }
   }
 }
