@@ -1,24 +1,24 @@
 {
   "abstractBoxes": {
     "core": {
-      "base": "#1f2032",
-      "surface0": "#2b2d3f",
-      "surface1": "#484a5e",
-      "surface2": "#606277",
-      "overlay0": "#656a82",
-      "overlay1": "#a08088",
-      "overlay2": "#909078",
-      "text": "#f4d3c3",
-      "subtext1": "#e4bcbc",
-      "subtext0": "#a9b0ca"
+      "base": "#081828",
+      "surface0": "#503838",
+      "surface1": "#384858",
+      "surface2": "#685840",
+      "overlay0": "#687090",
+      "overlay1": "#708098",
+      "overlay2": "#b88880",
+      "text": "#bbcbec",
+      "subtext1": "#93bbe4",
+      "subtext0": "#d49282"
     },
     "accents": {
       "red": [
-        "#f8a098",
-        "#f89898",
-        "#f8a0a0",
-        "#f09890",
-        "#f09898"
+        "#f8d0c8",
+        "#f8c8c0",
+        "#f8c0b8",
+        "#f0c8c0",
+        "#f8c0c0"
       ],
       "warm": [
         "#f8d898",
@@ -26,11 +26,11 @@
         "#f8c888"
       ],
       "cool": [
-        "#66c8f3",
-        "#44bcea",
-        "#89cacb",
-        "#abe0fb",
-        "#72b8da"
+        "#81c6e7",
+        "#82b6d1",
+        "#47bbe9",
+        "#35bcee",
+        "#9eacf1"
       ],
       "bridge": [
         "#cba6f7"
@@ -39,267 +39,267 @@
   },
   "bull": {
     "core": {
-      "base": "#20212d",
-      "surface0": "#405040",
-      "surface1": "#606275",
-      "surface2": "#606277",
-      "overlay0": "#a08878",
-      "overlay1": "#999eb5",
-      "overlay2": "#9297b0",
-      "text": "#d5ddf8",
-      "subtext1": "#e3c3b3",
-      "subtext0": "#acb3ce"
+      "base": "#e0e8e8",
+      "surface0": "#e8c0a8",
+      "surface1": "#a8c8c8",
+      "surface2": "#98b8b8",
+      "overlay0": "#80a8c0",
+      "overlay1": "#789898",
+      "overlay2": "#a88060",
+      "text": "#254e56",
+      "subtext1": "#64553e",
+      "subtext0": "#8a5d3e"
     },
     "accents": {
       "red": [
-        "#e0a090",
-        "#c78e97",
-        "#c29098",
-        "#af979b",
-        "#a9999b"
+        "#c87020",
+        "#d07828",
+        "#e08038",
+        "#c87830",
+        "#e08840"
       ],
       "warm": [
-        "#f8c818",
-        "#f8c000",
-        "#f8c010"
+        "#e08000",
+        "#d87800",
+        "#e08008"
       ],
       "cool": [
-        "#81c6e7",
-        "#82b6d1",
-        "#7ababb",
-        "#83b7d1",
-        "#9cd0eb"
+        "#076f9a",
+        "#526a7d",
+        "#566a7e",
+        "#596a77",
+        "#4f6b7c"
       ],
       "bridge": [
-        "#cba6f7"
+        "#7d2ee4"
       ]
     }
   },
   "camels": {
     "core": {
-      "base": "#21212a",
-      "surface0": "#404256",
-      "surface1": "#584858",
-      "surface2": "#606277",
-      "overlay0": "#808068",
-      "overlay1": "#8888a0",
-      "overlay2": "#909078",
-      "text": "#ebd2eb",
-      "subtext1": "#e4bcbc",
-      "subtext0": "#a8b0cd"
+      "base": "#202030",
+      "surface0": "#484060",
+      "surface1": "#485068",
+      "surface2": "#805868",
+      "overlay0": "#a07088",
+      "overlay1": "#8088a8",
+      "overlay2": "#78a0c8",
+      "text": "#c8c8e9",
+      "subtext1": "#c8b0d0",
+      "subtext0": "#c79e66"
     },
     "accents": {
       "red": [
-        "#f0b0a0",
-        "#e8a090",
-        "#e0a090",
-        "#e0a8a0",
-        "#e0a098"
+        "#f8a890",
+        "#f89888",
+        "#f0a088",
+        "#f09080",
+        "#f0c0b8"
       ],
       "warm": [
-        "#f8d020",
-        "#f8d830",
-        "#f8c810"
+        "#f8c800",
+        "#f8d028",
+        "#f8c818"
       ],
       "cool": [
-        "#7bc6ea",
-        "#6db9dc",
-        "#7abac5",
-        "#93c7e2",
-        "#82b6d1"
+        "#b6b7e6",
+        "#acaccf",
+        "#88b5cd",
+        "#44bbeb",
+        "#b0b0e0"
       ],
       "bridge": [
-        "#cba6f7"
+        "#c6a0f6"
       ]
     }
   },
   "couple": {
     "core": {
-      "base": "#21212a",
-      "surface0": "#284848",
-      "surface1": "#58596e",
-      "surface2": "#606275",
-      "overlay0": "#a08878",
-      "overlay1": "#9a9fb6",
-      "overlay2": "#9a9fb9",
-      "text": "#d1d9f4",
-      "subtext1": "#bcc5e2",
-      "subtext0": "#a9b0ca"
+      "base": "#382020",
+      "surface0": "#584030",
+      "surface1": "#405868",
+      "surface2": "#686850",
+      "overlay0": "#887868",
+      "overlay1": "#a88880",
+      "overlay2": "#b08880",
+      "text": "#dad2b2",
+      "subtext1": "#dab999",
+      "subtext0": "#baaa91"
     },
     "accents": {
       "red": [
-        "#ecdee0",
-        "#e77d93",
-        "#bd9299",
-        "#b89499",
-        "#e5c0c6"
+        "#e4788a",
+        "#d0838e",
+        "#c28a91",
+        "#bd8c92",
+        "#bb8d92"
       ],
       "warm": [
-        "#e1e3ad",
-        "#efb183",
-        "#d9ba85"
+        "#d3b478",
+        "#e6ab8c",
+        "#e2ad88"
       ],
       "cool": [
-        "#81c6e7",
-        "#82b6d1",
-        "#88b5d3",
-        "#84b8d2",
-        "#35bcee"
+        "#83c3e3",
+        "#88b5cd",
+        "#80b9b9",
+        "#7ab7d5",
+        "#aad7f0"
       ],
       "bridge": [
-        "#cba6f7"
+        "#c6a0f6"
       ]
     }
   },
   "forest": {
     "core": {
-      "base": "#21212a",
-      "surface0": "#35374a",
-      "surface1": "#584858",
-      "surface2": "#606275",
-      "overlay0": "#808068",
-      "overlay1": "#8489a0",
-      "overlay2": "#909078",
-      "text": "#d1d9f4",
-      "subtext1": "#bdc5e0",
-      "subtext0": "#a8b0cd"
+      "base": "#282030",
+      "surface0": "#284060",
+      "surface1": "#584860",
+      "surface2": "#705838",
+      "overlay0": "#887040",
+      "overlay1": "#a08070",
+      "overlay2": "#809878",
+      "text": "#d6cead",
+      "subtext1": "#d7b676",
+      "subtext0": "#bea56c"
     },
     "accents": {
       "red": [
-        "#d68695",
-        "#c2a0a5",
-        "#b2969a",
-        "#b1969a",
-        "#ad989b"
+        "#df7f61",
+        "#e87589",
+        "#df7b8b",
+        "#c58990",
+        "#b09194"
       ],
       "warm": [
-        "#e6b66b",
-        "#ecb46d",
-        "#eab56d"
+        "#e7ad68",
+        "#ccb779",
+        "#b6bd84"
       ],
       "cool": [
-        "#81c6e7",
-        "#82b6d1",
-        "#5bbae3",
-        "#35bcee",
-        "#8fb3d5"
+        "#94bfe8",
+        "#88b5cd",
+        "#4bbbe9",
+        "#44bbeb",
+        "#94b2d1"
       ],
       "bridge": [
-        "#cba6f7"
+        "#c6a0f6"
       ]
     }
   },
   "industry": {
     "core": {
-      "base": "#201808",
-      "surface0": "#2a2d40",
-      "surface1": "#305050",
-      "surface2": "#57596d",
-      "overlay0": "#656a80",
-      "overlay1": "#888870",
-      "overlay2": "#9a9fb9",
-      "text": "#e8c7b7",
-      "subtext1": "#b2b9d4",
-      "subtext0": "#9da5bf"
+      "base": "#f8e8e0",
+      "surface0": "#e8c0a8",
+      "surface1": "#d0c0b8",
+      "surface2": "#c8b088",
+      "overlay0": "#c0a078",
+      "overlay1": "#a89080",
+      "overlay2": "#988070",
+      "text": "#5e4738",
+      "subtext1": "#834f30",
+      "subtext0": "#a25640"
     },
     "accents": {
       "red": [
-        "#e77d93",
-        "#e27f93",
-        "#ca8c97",
-        "#c68f98",
-        "#cfacb1"
+        "#d86030",
+        "#e06038",
+        "#d05830",
+        "#d06030",
+        "#d86038"
       ],
       "warm": [
-        "#f8e080",
-        "#f8d878",
-        "#f8d070"
+        "#c88030",
+        "#c88830",
+        "#c88038"
       ],
       "cool": [
-        "#81c6e7",
-        "#82b6d1",
-        "#83b7d2",
-        "#7ec3e4",
-        "#96cae5"
+        "#13739f",
+        "#46708d",
+        "#566e81",
+        "#0074a7",
+        "#4c6f8e"
       ],
       "bridge": [
-        "#cba6f7"
+        "#8233e9"
       ]
     }
   },
   "man": {
     "core": {
-      "base": "#1f2032",
-      "surface0": "#2d2f40",
-      "surface1": "#444658",
-      "surface2": "#606277",
-      "overlay0": "#727790",
-      "overlay1": "#8888a0",
-      "overlay2": "#909078",
-      "text": "#d0d9f7",
-      "subtext1": "#bdc5e0",
-      "subtext0": "#a9b0ca"
+      "base": "#202838",
+      "surface0": "#683820",
+      "surface1": "#405870",
+      "surface2": "#886048",
+      "overlay0": "#8078a8",
+      "overlay1": "#8090b0",
+      "overlay2": "#c09890",
+      "text": "#b1d9f1",
+      "subtext1": "#e2b999",
+      "subtext0": "#91b1d1"
     },
     "accents": {
       "red": [
-        "#f89888",
-        "#f8a090",
-        "#f8b0a0",
-        "#f89890",
-        "#f0c8d0"
+        "#f89070",
+        "#f89878",
+        "#f89078",
+        "#f8a088",
+        "#f89080"
       ],
       "warm": [
-        "#f8e028",
         "#f8d000",
-        "#f8d008"
+        "#f8d008",
+        "#f0d000"
       ],
       "cool": [
-        "#66c8f3",
-        "#35bcee",
-        "#70c8c8",
-        "#78d0c8",
-        "#60c8d0"
+        "#78c8c8",
+        "#78c8c0",
+        "#70c8c0",
+        "#60c8c0",
+        "#70c8c8"
       ],
       "bridge": [
-        "#cba6f7"
+        "#c6a0f6"
       ]
     }
   },
   "witch": {
     "core": {
-      "base": "#21212a",
-      "surface0": "#405040",
-      "surface1": "#5f6174",
-      "surface2": "#606277",
-      "overlay0": "#808068",
-      "overlay1": "#898ea8",
-      "overlay2": "#9a9fb9",
-      "text": "#d1d9f4",
-      "subtext1": "#bcc5e2",
-      "subtext0": "#a7b0cc"
+      "base": "#e0e8e8",
+      "surface0": "#d0c8a8",
+      "surface1": "#b0c0c8",
+      "surface2": "#a0b0b8",
+      "overlay0": "#a0a070",
+      "overlay1": "#7890a0",
+      "overlay2": "#a88060",
+      "text": "#324a61",
+      "subtext1": "#70522b",
+      "subtext0": "#806142"
     },
     "accents": {
       "red": [
-        "#ffb8c7",
-        "#ffb9c5",
-        "#d78695",
-        "#ca8c97",
-        "#cfacb1"
+        "#d86800",
+        "#d06000",
+        "#c86800",
+        "#d07010",
+        "#c86818"
       ],
       "warm": [
-        "#f8c850",
-        "#f8d060",
-        "#f8c858"
+        "#d87808",
+        "#c08818",
+        "#c09820"
       ],
       "cool": [
-        "#85caec",
-        "#5dbae2",
-        "#38bced",
-        "#35bcee",
-        "#5ebae2"
+        "#076f9a",
+        "#596a77",
+        "#2c6e93",
+        "#1e6e97",
+        "#596a77"
       ],
       "bridge": [
-        "#cba6f7"
+        "#7d2ee4"
       ]
     }
   }
