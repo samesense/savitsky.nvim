@@ -2,23 +2,23 @@
   "abstractBoxes": {
     "core": {
       "base": "#201808",
-      "surface0": "#606277",
-      "surface1": "#504050",
-      "surface2": "#505165",
-      "overlay0": "#987880",
+      "surface0": "#2b2d3f",
+      "surface1": "#424458",
+      "surface2": "#515367",
+      "overlay0": "#656a80",
       "overlay1": "#808098",
-      "overlay2": "#909078",
+      "overlay2": "#9195ad",
       "text": "#e0b8b8",
-      "subtext1": "#cca4a5",
-      "subtext0": "#b29384"
+      "subtext1": "#a6adc8",
+      "subtext0": "#9199b5"
     },
     "accents": {
       "red": [
         "#f8d0c8",
-        "#f8c8c8",
         "#f8c8c0",
-        "#f0c8c0",
-        "#f8c0b8"
+        "#f8c0b8",
+        "#f8b8a8",
+        "#f0c8c0"
       ],
       "warm": [
         "#f8d898",
@@ -26,11 +26,11 @@
         "#f8c888"
       ],
       "cool": [
-        "#aabced",
-        "#a1afd5",
-        "#a8add4",
-        "#9ab0d6",
-        "#afabd2"
+        "#75cacc",
+        "#a4d8f3",
+        "#a5d9f5",
+        "#84e2ff",
+        "#7ababb"
       ],
       "bridge": [
         "#cba6f7"
@@ -39,36 +39,36 @@
   },
   "bull": {
     "core": {
-      "base": "#181808",
-      "surface0": "#405040",
-      "surface1": "#305050",
-      "surface2": "#4e5165",
+      "base": "#201808",
+      "surface0": "#606276",
+      "surface1": "#405040",
+      "surface2": "#606275",
       "overlay0": "#808068",
-      "overlay1": "#888870",
-      "overlay2": "#909078",
-      "text": "#d8b8a8",
-      "subtext1": "#a2aac5",
-      "subtext0": "#8f96b0"
+      "overlay1": "#a08878",
+      "overlay2": "#9a9fb6",
+      "text": "#c1c8e3",
+      "subtext1": "#acb4d2",
+      "subtext0": "#98a0ba"
     },
     "accents": {
       "red": [
-        "#ceada5",
-        "#b7949a",
-        "#b79496",
-        "#b6949d",
-        "#b79593"
+        "#f3bbc4",
+        "#d0a8a0",
+        "#b39b9e",
+        "#b99499",
+        "#b7949a"
       ],
       "warm": [
         "#f8c000",
-        "#f8c008",
-        "#f8c820"
+        "#f8c010",
+        "#f8c018"
       ],
       "cool": [
-        "#7bcbc2",
+        "#81c6e7",
         "#82b6d1",
-        "#88b5d3",
-        "#7eb7ce",
-        "#8db4d5"
+        "#81c2c2",
+        "#9acee9",
+        "#7ababb"
       ],
       "bridge": [
         "#cba6f7"
@@ -78,35 +78,35 @@
   "camels": {
     "core": {
       "base": "#281818",
-      "surface0": "#504050",
+      "surface0": "#2f3144",
       "surface1": "#405040",
-      "surface2": "#584858",
+      "surface2": "#5d5f74",
       "overlay0": "#808068",
       "overlay1": "#8088a0",
       "overlay2": "#909078",
       "text": "#e0c0b0",
       "subtext1": "#d1a9a9",
-      "subtext0": "#b79889"
+      "subtext0": "#969eb8"
     },
     "accents": {
       "red": [
-        "#f0c8d0",
+        "#f0c8c0",
         "#f0c8c8",
-        "#e8c8d8",
-        "#e8c0d0",
-        "#e8c0c8"
+        "#f0c8d0",
+        "#f0c0c0",
+        "#e8c8d8"
       ],
       "warm": [
-        "#f8c810",
-        "#f8d028",
-        "#f8d838"
+        "#f8d828",
+        "#f8c800",
+        "#f8d830"
       ],
       "cool": [
-        "#b7b9ea",
-        "#acacd3",
-        "#b2aad1",
-        "#a5aed5",
-        "#b9a8ce"
+        "#81c6e7",
+        "#82b6d1",
+        "#35bcee",
+        "#8cc0da",
+        "#56bae5"
       ],
       "bridge": [
         "#cba6f7"
@@ -115,36 +115,36 @@
   },
   "couple": {
     "core": {
-      "base": "#1c1b27",
-      "surface0": "#434154",
-      "surface1": "#3f4154",
-      "surface2": "#3f4255",
-      "overlay0": "#83839b",
-      "overlay1": "#7f849c",
-      "overlay2": "#7f849b",
-      "text": "#b3bad6",
-      "subtext1": "#a0a7c1",
-      "subtext0": "#9092ac"
+      "base": "#181808",
+      "surface0": "#2b2d3e",
+      "surface1": "#284848",
+      "surface2": "#305050",
+      "overlay0": "#656a80",
+      "overlay1": "#808068",
+      "overlay2": "#909078",
+      "text": "#b1b9d6",
+      "subtext1": "#9ea6c0",
+      "subtext0": "#8991ad"
     },
     "accents": {
       "red": [
-        "#d0acab",
-        "#ae9897",
-        "#ae9895",
-        "#ae9899",
-        "#ad9894"
+        "#f0e5e6",
+        "#f0dadd",
+        "#cbb3b6",
+        "#c59084",
+        "#bd9299"
       ],
       "warm": [
-        "#fabf95",
-        "#e6b491",
-        "#e1b68e"
+        "#eeb27d",
+        "#c9cb96",
+        "#c0c18d"
       ],
       "cool": [
-        "#76cbcb",
-        "#7ababa",
-        "#79babf",
-        "#7cbab5",
-        "#79b9c4"
+        "#81c6e7",
+        "#82b6d1",
+        "#a4d8f3",
+        "#abdffa",
+        "#82b6d0"
       ],
       "bridge": [
         "#cba6f7"
@@ -153,36 +153,36 @@
   },
   "forest": {
     "core": {
-      "base": "#181825",
-      "surface0": "#4c4a5d",
-      "surface1": "#494b5e",
-      "surface2": "#484b5e",
-      "overlay0": "#7d7c94",
-      "overlay1": "#797e95",
-      "overlay2": "#787e95",
-      "text": "#b0b7d3",
-      "subtext1": "#9da4be",
-      "subtext0": "#8d8fa9"
+      "base": "#181808",
+      "surface0": "#2b2d3e",
+      "surface1": "#504050",
+      "surface2": "#56586b",
+      "overlay0": "#656a80",
+      "overlay1": "#72778d",
+      "overlay2": "#a08878",
+      "text": "#acb4ce",
+      "subtext1": "#98a0bd",
+      "subtext0": "#858ca6"
     },
     "accents": {
       "red": [
-        "#d0acab",
-        "#ae9897",
-        "#ae9895",
-        "#ae9899",
-        "#ad9894"
+        "#d4c6c8",
+        "#e08194",
+        "#b8958d",
+        "#b89499",
+        "#b3969a"
       ],
       "warm": [
-        "#e9c68e",
-        "#d7ba8b",
-        "#d1bc8a"
+        "#d2be69",
+        "#faad76",
+        "#d1d39d"
       ],
       "cool": [
-        "#76cbcb",
-        "#7ababa",
-        "#79babf",
-        "#7cbab5",
-        "#79b9c4"
+        "#81c6e7",
+        "#82b6d1",
+        "#7cb7d4",
+        "#35bcee",
+        "#a5aed5"
       ],
       "bridge": [
         "#cba6f7"
@@ -192,35 +192,35 @@
   "industry": {
     "core": {
       "base": "#281818",
-      "surface0": "#606277",
-      "surface1": "#305050",
-      "surface2": "#505165",
-      "overlay0": "#808068",
-      "overlay1": "#888870",
-      "overlay2": "#909078",
-      "text": "#e0c0b0",
-      "subtext1": "#ccac9d",
-      "subtext0": "#969db9"
+      "surface0": "#414355",
+      "surface1": "#4a4c5e",
+      "surface2": "#606277",
+      "overlay0": "#988070",
+      "overlay1": "#a08878",
+      "overlay2": "#9a9fb9",
+      "text": "#bec7e5",
+      "subtext1": "#cdad9e",
+      "subtext0": "#979fb9"
     },
     "accents": {
       "red": [
-        "#e8a898",
-        "#ffc5b3",
-        "#ffbfd2",
-        "#ffbfc7",
-        "#ffbfdc"
+        "#ffb3c5",
+        "#e29da9",
+        "#d38896",
+        "#cc8c97",
+        "#cb8c97"
       ],
       "warm": [
         "#f8e080",
-        "#f8d878",
+        "#f8d070",
         "#f8e088"
       ],
       "cool": [
-        "#74e1d6",
-        "#72e9ff",
-        "#80e7ff",
-        "#67ebff",
-        "#8fe4ff"
+        "#81c6e7",
+        "#8eceed",
+        "#89e9ff",
+        "#71e8ff",
+        "#99cde8"
       ],
       "bridge": [
         "#cba6f7"
@@ -229,36 +229,36 @@
   },
   "man": {
     "core": {
-      "base": "#281818",
+      "base": "#1c1d2e",
       "surface0": "#284848",
-      "surface1": "#405040",
-      "surface2": "#584858",
+      "surface1": "#584858",
+      "surface2": "#606277",
       "overlay0": "#808068",
       "overlay1": "#8888a0",
-      "overlay2": "#909078",
+      "overlay2": "#9a9fb9",
       "text": "#a8d0e0",
-      "subtext1": "#aeb5d2",
+      "subtext1": "#aeb5d0",
       "subtext0": "#98a1bd"
     },
     "accents": {
       "red": [
-        "#f0c8d0",
-        "#f8b0a0",
-        "#f8a090",
         "#f89888",
-        "#f89890"
+        "#f8a090",
+        "#f89890",
+        "#f0c8d0",
+        "#e8b0b8"
       ],
       "warm": [
         "#f0d800",
-        "#f8d810",
+        "#f0d808",
         "#f8d000"
       ],
       "cool": [
-        "#73cbcb",
+        "#98b8f8",
         "#70c8c8",
-        "#68c8d8",
-        "#68c8e8",
-        "#70c8d8"
+        "#68c8c8",
+        "#70c8c0",
+        "#60c8e0"
       ],
       "bridge": [
         "#cba6f7"
@@ -267,36 +267,36 @@
   },
   "witch": {
     "core": {
-      "base": "#161622",
-      "surface0": "#4c4a5d",
-      "surface1": "#494b5e",
-      "surface2": "#484b5e",
-      "overlay0": "#7d7c94",
-      "overlay1": "#797e95",
-      "overlay2": "#787e95",
-      "text": "#c4cce9",
-      "subtext1": "#b0b8d5",
-      "subtext0": "#a0a2bf"
+      "base": "#21212a",
+      "surface0": "#405040",
+      "surface1": "#4e5064",
+      "surface2": "#606275",
+      "overlay0": "#808068",
+      "overlay1": "#909078",
+      "overlay2": "#9096af",
+      "text": "#c2cae5",
+      "subtext1": "#aeb6d3",
+      "subtext0": "#99a2be"
     },
     "accents": {
       "red": [
-        "#ffc5b3",
-        "#ffbfd2",
-        "#ffbfc7",
-        "#ffbfdc",
-        "#ffc1be"
+        "#ffbecc",
+        "#e57e93",
+        "#df8194",
+        "#d38896",
+        "#c98d97"
       ],
       "warm": [
-        "#f8c850",
-        "#f8c048",
-        "#f8d060"
+        "#f0c048",
+        "#f8c858",
+        "#f8c050"
       ],
       "cool": [
-        "#74e1d6",
-        "#72e9ff",
-        "#80e7ff",
-        "#67ebff",
-        "#8fe4ff"
+        "#75cacc",
+        "#7ababb",
+        "#5cc2ee",
+        "#a8dcf7",
+        "#82b6d1"
       ],
       "bridge": [
         "#cba6f7"
