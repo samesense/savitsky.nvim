@@ -22,10 +22,23 @@
       color: var(--text);
     }
 
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
     h1 {
       margin-top: 0;
       margin-bottom: 2rem;
-      font-size: 2rem;
+      font-size: clamp(1.6rem, 2vw + 1rem, 2.4rem);
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      margin: -1.25rem 0 1.75rem 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+      display: none;
     }
 
     .theme {
@@ -38,13 +51,14 @@
 
     .theme h2 {
       margin: 0 0 1rem 0;
-      font-size: 1.4rem;
+      font-size: clamp(1.2rem, 1.4vw + 0.8rem, 1.6rem);
+      line-height: 1.25;
     }
 
     /* 3-column layout: artwork | palettes | demo */
     .theme-content {
       display: grid;
-      grid-template-columns: 220px 1fr 360px;
+      grid-template-columns: minmax(180px, 220px) 1fr minmax(240px, 360px);
       gap: 1.5rem;
       align-items: start;
     }
@@ -56,7 +70,7 @@
       gap: 0.75rem;
     }
 
-    /* Hover zoom container (keeps border radius + prevents layout shift) */
+    /* Image container with border radius */
     .zoom {
       position: relative;
       overflow: hidden;
@@ -68,21 +82,11 @@
     .zoom img {
       width: 100%;
       display: block;
-      transform: scale(1);
-      transition: transform 180ms ease, filter 180ms ease;
-      will-change: transform;
     }
 
-    .zoom:hover img {
-      transform: scale(1.9);
-      filter: saturate(1.05) contrast(1.05);
-      cursor: zoom-in;
-    }
-
-    /* Optional: focus-visible support for keyboard users */
-    .zoom:focus-within img {
-      transform: scale(1.9);
-      filter: saturate(1.05) contrast(1.05);
+    .zoom:focus-visible {
+      outline: 2px solid var(--muted);
+      outline-offset: 2px;
     }
 
     .theme-palettes {
@@ -112,7 +116,7 @@
     }
 
     .swatch {
-      width: 72px;
+      width: clamp(64px, 8vw, 84px);
       text-align: center;
       font-size: 0.75rem;
       color: var(--muted);
@@ -120,7 +124,7 @@
 
     .swatch-box {
       width: 100%;
-      height: 48px;
+      height: clamp(40px, 6vw, 52px);
       border-radius: 8px;
       border: 1px solid #0006;
       margin-bottom: 0.3rem;
@@ -132,13 +136,18 @@
       color: var(--muted);
     }
 
-    footer {
-      margin-top: 4rem;
-      color: var(--muted);
-      font-size: 0.8rem;
-    }
 
     /* Mobile fallback */
+    @media (max-width: 1100px) {
+      .theme-content {
+        grid-template-columns: minmax(160px, 220px) 1fr;
+      }
+
+      .theme-demo {
+        grid-column: 1 / -1;
+      }
+    }
+
     @media (max-width: 900px) {
       body {
         padding: 1.25rem;
@@ -152,30 +161,63 @@
         padding: 1.25rem;
       }
 
-      .zoom:hover img,
-      .zoom:focus-within img {
-        transform: scale(1.25);
+      .swatch {
+        width: clamp(60px, 16vw, 86px);
       }
     }
 
-    /* Respect reduced motion */
-    @media (prefers-reduced-motion: reduce) {
-      .zoom img {
-        transition: none;
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+
+      .theme {
+        padding: 0.95rem;
+        margin-bottom: 2rem;
+      }
+
+      h1 {
+        margin-bottom: 1.25rem;
+        font-size: 1.6rem;
+      }
+
+      .subtitle {
+        display: block;
+        margin: -0.75rem 0 1.25rem 0;
+        font-size: 0.85rem;
+      }
+
+      .theme h2 {
+        margin-bottom: 0.75rem;
+        font-size: 1.15rem;
+      }
+
+      .section {
+        margin-top: 1rem;
+      }
+
+      .swatches {
+        gap: 0.5rem;
+      }
+
+      .swatch {
+        width: clamp(56px, 20vw, 80px);
+      }
+
+      .swatch-box {
+        height: clamp(36px, 10vw, 48px);
       }
     }
+
   </style>
 </head>
 
 <body>
 
   <h1>Neovim Savitsky Museum Theme Gallery</h1>
+  <p class="subtitle">Auto-generated theme gallery with palettes and screenshots.</p>
 
   <div id="gallery">Loading…</div>
-
-  <footer>
-    Auto-generated from Lua themes.
-  </footer>
 
   <script>
     async function loadThemes() {
@@ -207,8 +249,10 @@
     }
 
     function makeZoomImage(src, alt, onMissingRemoveEl) {
-      const wrap = document.createElement("div");
-      wrap.className = "zoom";
+      const link = document.createElement("a");
+      link.className = "zoom";
+      link.href = src;
+      link.setAttribute("aria-label", `${alt} (open image)`);
 
       const img = document.createElement("img");
       img.src = src;
@@ -216,8 +260,8 @@
       img.loading = "lazy";
       img.onerror = () => onMissingRemoveEl?.remove();
 
-      wrap.appendChild(img);
-      return wrap;
+      link.appendChild(img);
+      return link;
     }
 
     function renderTheme(name, theme) {
