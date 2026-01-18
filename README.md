@@ -1,5 +1,7 @@
 # savitsky.nvim
 
+[demo](https://samesense.github.io/savitsky.nvim/)
+
 > Neovim themes derived from Savitsky Museum paintings
 
 `savitsky.nvim` is a Neovim theme plugin built on top of  
